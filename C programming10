@@ -1,0 +1,46 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0103_03");
+
+	printf("■키보드로 입력 받은 점수에 해당하는 등급(A, B, C, D, F)를 출력\n");
+	printf("=======================================================================\n");
+
+	int score;
+	char *grade;
+
+	printf("점수 입력 : ");
+	scanf("%d", &score);
+
+	printf("-----------------------------------------------------------------------\n");
+
+	if (score <= 100 && score >= 90)
+		grade = "A+";
+	else if (score < 90 && score >= 80)
+		grade = "A0";
+	else if (score < 80 && score >= 70)
+		grade = "B+";
+	else if (score < 70 && score >= 60)
+		grade = "B0";
+	else if (score < 60 && score >= 50)
+		grade = "C+";
+	else if (score < 50 && score >= 40)
+		grade = "C0";
+	else if (score < 40 && score >= 30)
+		grade = "D+";
+	else if (score < 30 && score >= 20)
+		grade = "D0";
+	else if (score < 20 && score >= 0)
+		grade = "F";
+	else
+		printf("점수의 허용범위 구간이 아닙니다.\n");
+
+	printf("◆>>> 등급 : \"%s\"\n", grade);
+}
