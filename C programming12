@@ -1,0 +1,58 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0104_02");
+	
+	printf("■입력받은 점수에 따라 switch문으로 해당 등급을 출력\n");
+	
+	printf("=============================================================\n");
+	
+	int score, result;
+	char grade;
+
+	printf("> 점수를 입력하시오 : ");
+	scanf("%d", &score);
+
+	result = score / 10;
+
+	printf("-------------------------------------------------------------\n");
+
+	if (score >= 0 && score < 60)
+		grade = 'F';
+	else if (score >= 60 && score <= 100) {
+		switch (result) {
+		case 10:
+		case 9:
+			grade = 'A';
+			break;
+		case 8:
+			grade = 'B';
+			break;
+		case 7:
+			grade = 'C';
+			break;
+		case 6:
+			grade = 'D';
+			break;
+		default:
+			break;
+		}
+	}
+	else {
+		printf("> 점수의 허용구간(0~100)이 아닙니다...\n");
+		printf("> 프로그램을 다시 실행하십시오!!!\n");
+	}
+
+	printf("> 점수 : %d\n", score);
+	printf("> 등급 : %c\n", grade);
+
+	printf("-------------------------------------------------------------\n");
+
+}
