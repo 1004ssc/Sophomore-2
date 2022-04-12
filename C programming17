@@ -1,0 +1,109 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+void score_fun();
+void grade_fun(int score);
+void err_alph();
+void err_score(int score);
+void end_fun(char ans);
+
+
+
+void main() {
+	system("title 0114_01");
+
+	char ans;
+
+	do {
+		printf("-------------------<<< score_fun() 함수 >>>-------------------\n\n");
+		printf("■ 점수와 등급 출력을 반복 수행하는 프로그램\n");
+		printf("==============================================================\n");
+
+		printf(">> 프로그램을 시작하시겠습니까? (Yes/No) : ");
+		scanf(" %c", &ans);
+
+		if (ans == 'Y' || ans == 'y') {
+			score_fun();
+		}
+		else if (ans == 'N' || ans == 'n') {
+			end_fun(ans);
+			goto end;
+			}
+		else {
+			err_alph();
+			continue;
+		}
+	} while (1);
+end:
+	printf("\n");
+}
+
+void score_fun() {
+	int score;
+re:
+	printf("\n-------------------<<< score_fun() 함수 >>>-------------------\n\n");
+	printf(">> 점수 입력 : ");
+	scanf(" %d", &score);
+
+	if (score >= 0 && score <= 100) {
+		grade_fun(score);
+	}
+	else {
+		err_score(score);
+		goto re;
+	}
+}
+
+void grade_fun(int score) {
+re:
+	printf("\n-------------------<<< grade_fun() 함수 >>>-------------------\n\n");
+	printf(">> score_fun() 함수로부터 전달받은 값 : [ %d ]\n", score);
+
+	if (score >= 0 && score <= 100) {
+		if (score >= 96 && score <= 100)
+			printf(">> 등급 : [ A+ 학점 ]\n");
+		else if (score >= 91 && score <= 95)
+			printf(">> 등급 : [ A0 학점 ]\n");
+		else if (score >= 86 && score <= 90)
+			printf(">> 등급 : [ B+ 학점 ]\n");
+		else if (score >= 81 && score <= 85)
+			printf(">> 등급 : [ B0 학점 ]\n");
+		else if (score >= 76 && score <= 80)
+			printf(">> 등급 : [ C+ 학점 ]\n");
+		else if (score >= 71 && score <= 75)
+			printf(">> 등급 : [ C0 학점 ]\n");
+		else if (score >= 66 && score <= 70)
+			printf(">> 등급 : [ D+ 학점 ]\n");
+		else if (score >= 66 && score <= 70)
+			printf(">> 등급 : [ D0 학점 ]\n");
+		else
+			printf(">> 등급 : [ F 학점 ]\n");
+	}
+	else {
+		err_score(score);
+		goto re;
+	}
+}
+
+void err_alph() {
+	printf("\n-------------------<<< err_alph() 함수 >>>-------------------\n\n");
+	printf(">> main() 함수에서 입력한 알파벳 [ %d ]는 유효하지 않습니다.\n");
+	printf("알파벳을 다시 입력하십시오.\n");
+}
+
+void err_score(int score) {
+	printf("\n-------------------<<< err_score() 함수 >>>-------------------\n\n");
+	printf(">> 점수 [ %d ]는 등급을 산출할 수 없습니다!!\n", score);
+}
+
+void end_fun(char ans) {
+	printf("\n-------------------<<< end_fun() 함수 >>>-------------------\n\n");
+	printf(">> main() 함수에서 프로그램 종료를 요청하였습니다.\n");
+	printf("알파벳 \"%c\"을 전달받아 프로그램을 종료합니다!!\n", ans);
+	printf("==============================================================\n");
+}
