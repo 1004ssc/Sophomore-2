@@ -1,0 +1,43 @@
+/*
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0102_01");
+
+	float base, height;
+	double result;
+
+	printf("■키보드로 밑변과 높이를 입력받아 삼각형의 넓이 구하기\n");
+	printf("---------------------------------------------------------------\n");
+
+	printf("밑변을 입력하세요.");
+	scanf("%f", &base);
+
+	printf("높이를 입력하세요.");
+	scanf("%f", &height);
+
+	result = (base * height) / 2;
+
+	printf("---------------------------------------------------------------\n");
+	printf("입력한 밑변 ........ %f\n", base);
+	printf("입력한 밑변 ........ %f\n", height);
+	printf("---------------------------------------------------------------\n");
+	printf("넓이(소수이하 15) ... %.15f\n", result);
+	printf("넓이(소수이하 16) ... %.16f\n", result);
+	printf("넓이(소수이하 17) ... %.17f\n", result);
+	printf("넓이(소수이하 18) ... %.18f\n", result);
+	printf("넓이(소수이하 19) ... %.19f\n", result);
+	printf("넓이(소수이하 20) ... %.20f\n", result);
+	printf("넓이(소수이하 21) ... %.21f\n", result);
+	printf("넓이(소수이하 22) ... %.22f\n", result);
+	printf("넓이(소수이하 23) ... %.23f\n", result);
+	printf("넓이(소수이하 24) ... %.24f\n", result);
+	printf("넓이(소수이하 25) ... %.25f\n", result);
+	printf("넓이(소수이하 26) ... %.26f\n", result);
+}
