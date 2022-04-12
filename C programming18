@@ -1,0 +1,152 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void play_fun();
+void sum_fun();
+void score_fun();
+void err_score();
+void err_msg();
+void end_fun();
+
+void main() {
+	system("title 0115_01");
+	
+	char ans;
+
+start:
+	do {
+		printf("\n-------------------<<< main() >>>-------------------\n\n");
+		printf(">> 프로그램을 시작하시겠습니까? (Yes/No) : ");
+		scanf(" %c", &ans);
+
+		if (ans == 'Y' || ans == 'y') {
+			play_fun();
+		}
+		else if (ans == 'N' || ans == 'n')
+			goto end;
+		else {
+			err_msg();
+			goto start;
+		}
+	} while (1);
+end:
+	end_fun();
+}
+
+void play_fun() {
+	int choose;
+re:
+	printf("\n-------------------<<< sum_fun() >>>-------------------\n\n");
+	printf(">> 아래 프로그램 중에서 하나를 선택하여 실행할 수 있습니다.\n\n");
+	printf(" 1 : 1부터 입력받은 수까지의 누적합\n");
+	printf(" 2 : 3과목 점수를 for문으로 입력받아 총점과 평균 산출\n\n");
+	printf(">> 실행할 프로그램을 선택하세요. (1 또는 2) : ");
+	scanf(" %d", &choose);
+
+	switch (choose) {
+	case 1:
+		sum_fun();
+		break;
+	case 2:
+		score_fun();
+		break;
+	default:
+		err_msg();
+		goto re;
+		break;
+	}
+
+}
+
+void sum_fun() {
+	int hap = 1, sum = 0, cnt = 1;
+
+	printf("\n-------------------<<< sum_fun() >>>-------------------\n\n");
+	printf("■ while문으로 1에서 입력받은 수까지 누적합을 구하는 프로그램\n\n");
+	printf("> 어디까지의 합을 구할까요? : ");
+	scanf(" %d", &hap);
+
+	while (cnt <= hap) {
+		for (int i = 1; i <= hap; i++) 	{
+			sum = sum + i;
+			printf("%d회 반복 누적합 :\t%2d\n", cnt, sum);
+			cnt++;
+			
+		}
+	}
+	printf("\n> 1부터 %d까지의 누적합 ..... [ %d ]\n", hap, sum);
+	play_fun();
+}
+
+void score_fun() {
+	int sub1, sub2, sub3, total;
+	float avg;
+
+	printf("\n-------------------<<< score_fun() >>>-------------------\n\n");
+	printf("■ 3과목 점수를 for문으로 입력받아 총점과 평균 산출\n");
+	printf("문> 3과목 점수를 차례대로 입력하시오.\n\n");
+
+	printf("-------------------\n");
+	for (int i = 1; i < 4; i++) {
+	re:
+		printf("과목 %d : ", i);
+		switch (i) {
+			case 1:
+				scanf(" %d", &sub1);
+				if (sub1 > 100 || sub1 < 0) {
+					err_score();
+					goto re;
+				}
+				break;
+			case 2:
+				scanf(" %d", &sub2);
+				if(sub2 > 100 || sub2 < 0) {
+					err_score();
+					goto re;
+				}
+				break;
+			case 3:
+				scanf(" %d", &sub3);
+				if(sub3 > 100 || sub3 < 0) {
+					err_score();
+					goto re;
+				}
+				break;
+		}
+	}
+		printf("-------------------\n");
+		
+	total = sub1 + sub2 + sub3;
+	printf("과목총점 : %d\n", total);
+
+	avg = (float)total / 3;
+	printf("평균점수 : %.2f\n\n", avg);
+
+	printf("==============================================================\n");
+	printf("메인함수에서 do~while문으로 사용자 정의함수 호출 프로그램\n");
+	printf("==============================================================\n");
+
+	main();
+}
+
+void err_score() {
+	printf("\n-------------------<<< err_score() >>>-------------------\n\n");
+	printf("\t>>>>>  점수의 허용구간이 아닙니다.\n\t점수를 다시 입력하십시오  <<<<<.\n\n");
+}
+
+void err_msg() {
+	printf("\n-------------------<<< err_msg() >>>-------------------\n\n");
+	printf("\t>>>>>  프로그램 에러가 발생하였습니다.\n\t허용되는 입력값이 아닙니다.<<<<<.\n\n");
+}
+
+void end_fun() {
+	printf("==============================================================\n");
+	printf(">> 프로그램을 종료합니다.\n");
+	printf("==============================================================\n");
+}
