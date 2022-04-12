@@ -1,0 +1,23 @@
+/*-
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0102_01");
+
+	int dc_num = 123;
+	int oc_num = 0123;
+	int hx_num = 0x123;
+
+	printf("■정수 123을 10진, 8진, 16진수로 출력 \n");
+	printf("------------------------------------------------\n");
+
+	printf("10진수 123 ....... %d\n", dc_num);
+	printf(" 8진수 0123 ....... %d\n", oc_num);
+	printf("16진수 0x123 ....... %d\n", hx_num);
+}
