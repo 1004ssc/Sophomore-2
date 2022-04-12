@@ -1,0 +1,17 @@
+/*-
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0102_01");
+
+	char *pot = "hello";
+
+	printf("-> 문자열의 출력 : [%s]\n", pot);
+
+}
