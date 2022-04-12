@@ -1,0 +1,56 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0102_07");
+
+	int cnt, first, second;
+	char x;
+
+	printf("■2개의 정수형 값을 키보드를 입력 받아 사칙연산을 출력하는 프로그램\n");
+	
+	for(cnt = 1; cnt <= 80; cnt++)
+		printf("=");
+	
+	printf("\n");
+
+	printf("> 첫 번째 정수 입력 : ");
+	scanf("%d", &first);
+
+	printf("> 두 번째 정수 입력 : ");
+	scanf("%d", &second);
+
+	printf("> 문자 입력 : ");
+	scanf("%c", &x);
+	
+	getchar();
+
+	for (cnt = 1; cnt <= 80; cnt++)
+		printf("-");
+
+	printf("\n");
+
+	printf(">>덧셈연산 결과 : a + b = %d\n", first + second);
+	printf(">>뺄셈연산 결과 : a - b = %d\n", first - second);
+	printf(">>곱셈연산 결과 : a * b = %d\n", first * second);
+	printf(">>나눗셈연산 결과 : a / b = %.2f\n", (float)first / second);
+	printf("입력한 문자 \"%c\"에 해당하는 ASCII 코드값은 %d입니다.\n", x, x);
+
+	for (cnt = 1; cnt <= 80; cnt++)
+		printf("-");
+
+	printf("\n");
+
+	printf(">>> 프로그램을 종료합니다...\n");
+
+	for (cnt = 1; cnt <= 80; cnt++)
+		printf("=");
+
+	printf("\n");
+}
