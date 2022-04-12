@@ -1,0 +1,71 @@
+*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0107_01");
+	printf("■3명의 학생 신상명세를 for문으로 출력하는 프로그램\n");
+	printf("=========================================================\n");
+
+	printf(">> 학생 신상명세를 입력하세요...\n\n");
+
+	int stu, repeat = 1;
+	char ans, sch[20], num[10], name[12], gender[4], phone[20], mail[20];
+	do {
+		for (stu = 1; stu <= 3; stu++) {
+			printf("--< 학생 %d 의 신상명세 입력>-----------------------------\n", stu);
+			printf("1. 학교명 : ");
+			scanf("%s", &sch);
+			printf("2. 학번 : ");
+			scanf("%s", &num);
+			printf("3. 성명 : ");
+			scanf("%s", &name);
+			printf("4. 성별 : ");
+			scanf("%s", &gender);
+			printf("5. 전화번호(예시> 010-0000-0000) : ");
+			scanf("%s", &phone);
+			printf("6. 이메일 : ");
+			scanf("%s", &mail);
+			printf("\n");
+
+			printf("--< 학생 %d 의 신상명세 출력>-----------------------------\n", stu);
+			printf("1. 학교명 : %s\n", sch);
+			printf("2. 학번 : %s\n", num);
+			printf("3. 성명 : %s\n", name);
+			printf("4. 성별 : %s\n", gender);
+			printf("5. 전화번호(예시> 010-0000-0000) : %s\n", phone);
+			printf("6. 이메일 : %s\n", mail);
+			printf("\n");
+		}
+
+	again:
+		printf("=========================================================\n");
+		printf("♣프로그램을 다시 실행하시겠습니까? (Y/N) : \n");
+		getchar();
+		scanf("%c", &ans);
+		printf("=========================================================\n");
+
+		if (ans == 'n' || ans == 'N') {
+			printf("-x-x-x- 총 %d회 실행한 프로그램을 종료합니다. -x-x-x-\n", repeat);
+			printf("=========================================================\n");
+			break;
+		}
+
+		else if (ans == 'Y' || ans == 'y') {
+			repeat++;
+			continue;
+		}
+
+		else {
+			printf("??? 허용되는 알파벳은 대/소문자 구별없이 Y 또는 N만 허용됩니다.\n");
+			printf("프로그램을 다시 실행하십시오.\n");
+		}
+		goto again;
+
+	} while (1);
+}
