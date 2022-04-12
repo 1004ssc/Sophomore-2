@@ -1,0 +1,13 @@
+/*--
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0107_02");
+
+}
