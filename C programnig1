@@ -1,0 +1,21 @@
+/*-
+학번 : 2018034111
+학과 : 전기공학부
+성명 : 신승철
+--*/
+
+#include <stdio.h>
+#include <Windows.h>
+
+void main() {
+	system("title 0102_01");
+
+	char ch;
+	ch = 'A';
+
+	printf("■문자형 변수를 선언하여 알파벳 A와 ASCII 코드값 출력 \n");
+	printf("-------------------------------------------------------------\n");
+
+	printf("알파벳 출력 : %c\n", ch);
+	printf("ASCII 코드값 : %d\n", ch);
+}
